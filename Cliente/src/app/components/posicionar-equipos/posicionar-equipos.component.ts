@@ -22,6 +22,15 @@ export class PosicionarEquiposComponent implements OnInit {
     this._equipoService.getEquipos().subscribe(data => {
       console.log(data)
       this.listEquipos = data
+      this.listEquipos.sort(function(a,b){
+        if(a.puntos<b.puntos){
+          return 1;
+        }
+        if(a.puntos>b.puntos){
+          return -1;
+        }
+        return 0;
+      })
     }, error => {
       console.log(error)
     })
