@@ -4,23 +4,22 @@
         <div class="col-lg8 offset-lg3">
             <div *ngFor="let local of listEquipos" class="card">
                 <div class="card-body text-center">
-                        <div class="mt-3" *ngFor="let visitante of listEquipos">
-                            <div *ngIf="local.nombre != visitante.nombre" class="row">
-                                <form  class="mt-4" [formGroup]="partidosForm" (ngSubmit)="agregarPuntos(local._id,visitante._id)">
-                                    <div class="row">
-                                        <h4 class="col float-start" formControlName="golesLocal">{{local.nombre}}</h4>
-                                        <div class="col float-center">
-                                            <input type="number" class="form-control float-start" placeholder="0" style="width: 70px;" formControlName="golesLocal" min="0">
-                                            -
-                                            <input type="number" class="form-control float-end" placeholder="0" style="width: 70px;" formControlName="golesVisitante" min="0">
-                                        </div>
-                                        <h4 class="col float-end">{{visitante.nombre}}</h4>
-                                    </div>                                    
-                                    <button class="btn btn-success btn-lg float-end mt-10">Guardar</button>
-                                </form>
-                            </div>
+                    <div class="mt-3" *ngFor="let visitante of listEquipos">
+                        <div *ngIf="local.nombre != visitante.nombre" class="row">
+                            <form  class="mt-4" [formGroup]="partidosForm" (ngSubmit)="agregarPuntos(local._id,visitante._id)">
+                                <div class="row">
+                                    <h4 class="col float-start">{{local.nombre}}</h4>
+                                    <div class="col float-center">
+                                        <input type="number" class="form-control float-start" placeholder="0" style="width: 70px;" formControlName="golesLocal" min="0">
+                                        -
+                                        <input type="number" class="form-control float-end" placeholder="0" style="width: 70px;" formControlName="golesVisitante" min="0">
+                                    </div>
+                                    <h4 class="col float-end">{{visitante.nombre}}</h4>
+                                </div>                                    
+                                <button class="btn btn-success btn-lg float-end mt-10">Guardar</button>
+                            </form>
                         </div>
-                    
+                    </div>                    
                 </div>
             </div>
         </div>
