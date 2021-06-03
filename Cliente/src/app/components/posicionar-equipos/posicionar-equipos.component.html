@@ -5,10 +5,9 @@
                 <div class="card-body text-center">
                     <span class="titulo">Tabla de posiciones</span>
                     <button class="btn btn-success float-end" routerLink="/crear">Añadir equipo</button>
-                    <table class="table table-striped mt-4">
+                    <table *ngIf="listEquipos.length>0" class="table table-striped mt-4">
                         <thead>
-                          <tr>
-                            <th scope="col">Posicion</th>
+                          <tr class="Cabecera">
                             <th scope="col">Nombre</th>
                             <th scope="col">Puntos</th>
                             <th scope="col">Diferencia de gol</th>
@@ -18,17 +17,18 @@
                           </tr>
                         </thead>
                         <tbody>
-                          <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            <td>@mdo</td>
-                            <td>@mdo</td>
-                            <td><i class="fas fa-trash-alt text-danger"></i></td>
+                          <tr *ngFor="let equipo of listEquipos" class="Contenido">
+                            <td>{{ equipo.nombre }}</td>
+                            <td>{{ equipo.puntos }}</td>
+                            <td>{{ equipo.difGol }}</td>
+                            <td>{{ equipo.golesFavor }}</td>
+                            <td>{{ equipo.golesContra }}</td>
+                            <td><i (click)="eliminarEquipo(equipo._id)" class="fas fa-trash-alt text-danger"></i></td>
                           </tr>
                         </tbody>
                       </table>
+                      <h5 class="text-danger" *ngIf="listEquipos.length ==0">No hay equipos para mostrar</h5>
+                      <button class="btn btn-success float-center" routerLink="/calendario">Calendario</button>
                 </div>
             </div>
         </div>

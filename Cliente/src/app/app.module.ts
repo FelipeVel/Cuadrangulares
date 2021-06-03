@@ -8,20 +8,24 @@ import { ToastrModule } from 'ngx-toastr';
 import { AppComponent } from './app.component';
 import { PosicionarEquiposComponent } from './components/posicionar-equipos/posicionar-equipos.component';
 import { CrearEquipoComponent } from './components/crear-equipo/crear-equipo.component';
+import { HttpClientModule } from '@angular/common/http';
+import { CalendarioComponent } from './components/calendario/calendario.component'
 
 
 @NgModule({
   declarations: [
     AppComponent,
     PosicionarEquiposComponent,
-    CrearEquipoComponent
+    CrearEquipoComponent,
+    CalendarioComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

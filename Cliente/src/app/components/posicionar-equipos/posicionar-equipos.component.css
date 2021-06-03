@@ -1,0 +1,14 @@
+table {
+    counter-reset: rowNumber;
+    counter-increment: rowNumber;
+}
+
+table tr:not(:first-child) {
+    counter-increment: rowNumber;
+}
+
+table tr td:first-child::before {
+    content: counter(rowNumber);
+    min-width: 1em;
+    float: left;
+}

@@ -1,4 +1,4 @@
-export class equipo{
+export class Equipo{
     _id?: number;
     nombre: String;
     puntos: number;
