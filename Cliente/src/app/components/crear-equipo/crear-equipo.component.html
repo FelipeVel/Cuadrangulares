@@ -1,0 +1,23 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+            <div class="card">
+                <div class="card-body text-center">
+                    <span class="titulo">Crear equipo</span>
+                    <form class="mt-4" [formGroup]="equipoForm" (ngSubmit)="agregarEquipo()">
+                        <div class="mb-3 mt-4">
+                            <input type="text" class="form-control" placeholder="Nombre" formControlName="nombre">
+                            <div class="text-danger" *ngIf="equipoForm.get('nombre')?.hasError('required') && equipoForm.get('nombre')?.touched">
+                                <span>El nombre de equipo es obligatorio</span>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <button class="btn btn-secondary btn-lg float-start" routerLink="/">Volver</button>
+                            <button class="btn btn-success btn-lg float-end" [disabled]="equipoForm.invalid">Crear</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
