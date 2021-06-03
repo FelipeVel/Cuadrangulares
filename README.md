@@ -1,7 +1,7 @@
 # Cuadrangulares
 _El proyecto simula unos cuadrangulares de ida y vuelta, dando la posibilidad de añadir equipos y de registrar marcadores para ajustar la tabla de posiciones._
 
-## Construido con 🛠️
+## Construido con:
 * [MongoDB](https://www.mongodb.com/es) - Bases de datos NoSQL
 
 * [Angular](https://angular.io/) - Framework de desarrollo por componentes
@@ -9,7 +9,7 @@ _El proyecto simula unos cuadrangulares de ida y vuelta, dando la posibilidad de
 * [NodeJS](https://nodejs.org/es/) - Entorno de ejecución para JavaScript
 
 
-##¿Cómo ejecutarlo?
+## ¿Cómo ejecutarlo?
 Ubicarse en la carpeta del Servidor y luego ejecutar:
 ```
 npm run dev
